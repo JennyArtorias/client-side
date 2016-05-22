@@ -6,8 +6,8 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
 
   console.log(data.body)
   console.log(typeof data.body)
-  console.log(JSON.parse(data.body.replace('/[|]/g', "")))
-  
+  console.log(JSON.parse(data.body.name.replace('/[|]/g', "")))
+
   document.body.innerHTML = example({ name: "Space" });
 })
 
