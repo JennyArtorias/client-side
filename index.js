@@ -7,7 +7,7 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
   console.log(data.body)
   var sat = data.body[0].replace('/[|]/g', "")
   console.log(sat)
-  console.log(data.body)
+  console.log(data.body[0])
   
 
   document.body.innerHTML = example({ name: "Space" });
