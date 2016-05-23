@@ -25,8 +25,9 @@ xhr.get('https://api.wheretheiss.at/v1/satellites/25544', function (err, data) {
    
 
     console.log(allStat)
+    console.log(typeof allStat)
 
-    document.body.innerHTML = example({id: statParse});
+    // document.body.innerHTML = example({id: statParse});
 
 
 
