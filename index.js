@@ -17,7 +17,6 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
 
 
 
-})
 
     document.getElementById('test').addEventListener("click", function() {
       
@@ -27,17 +26,8 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
           }
             
             var allStat = JSON.parse(data.body.replace('/[|]/g', ''))
-            document.body.innerHTML = test(allStat)
-      
-
-    })
-    
+    });
    
-
-    console.log(allStat)
-    console.log(typeof allStat)
-    console.log(test)
-
 
     // document.body.innerHTML = example({id: statParse});
 
@@ -45,6 +35,7 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
 
 })
 
+})
 
 
 
