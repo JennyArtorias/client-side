@@ -10,6 +10,7 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
   // console.log(sat[0])
   // console.log(sat[0].name)
   var name1 = sat1[0].name
+  console.log(sat1[0])
   
 
 
