@@ -19,7 +19,7 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
 
 })
 
-    document.body.getElementbyId('test').addEventListener('click', function() {
+    document.getElementbyId('test').addEventListener('click', function() {
       
         xhr.get('https://api.wheretheiss.at/v1/satellites/' + 25544, function (err, data) {
           if (err) {
