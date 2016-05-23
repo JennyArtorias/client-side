@@ -17,15 +17,12 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
   document.body.innerHTML = example({ name: name1 });
 })
 
-xhr.get('https://api.wheretheiss.at/v1/satellites', function (err, data) {
+xhr.get('https://api.wheretheiss.at/v1/satellites/25544', function (err, data) {
   if (err) console.log(err)
 
     console.log(data.body)
 
-    var sat2 = JSON.parse(data.body.replace('/[|]/g', ""))
-    var id1 = sat2[0].id1
 
-    document.body.innerHTML = example({ id: id1 });
 
 })
 
