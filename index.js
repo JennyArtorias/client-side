@@ -22,9 +22,9 @@ xhr.get('https://api.wheretheiss.at/v1/satellites/25544', function (err, data) {
 
     var allStat = JSON.parse(data.body.replace('/[|]/g', ''))
 
-    var statParse = allStat
+   
 
-    console.log(statParse)
+    console.log(allStat)
 
     document.body.innerHTML = example({id: statParse});
 
