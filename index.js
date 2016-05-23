@@ -20,7 +20,11 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
 xhr.get('https://api.wheretheiss.at/v1/satellites/25544', function (err, data) {
   if (err) console.log(err)
 
-    console.log(data.body)
+    var allStat = JSON.parse(data.body.replace('/[|]/g', ''))
+
+    var statParse = allStat
+
+    console.log(statParse)
 
 
 
