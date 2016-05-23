@@ -9,10 +9,11 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
   var sat = JSON.parse(data.body.replace('/[|]/g', ""))
   console.log(sat[0])
   console.log(sat[0].name)
+  var name1 = sat[0].name
 
-  
 
 
-  document.body.innerHTML = example({ name: "Space" });
+
+  document.body.innerHTML = example({ name: name1 });
 })
 
