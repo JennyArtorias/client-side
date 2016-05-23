@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-var xhr=require("xhr"),example=require("./views/example.hbs");xhr.get("https://api.wheretheiss.at/v1/satellites",function(e,t){e&&console.log(e),console.log(t.body);var o=JSON.parse(t.body.replace("/[|]/g","")),s=o[0].name;console.log(o[0].id),document.body.innerHTML=example({name:s}),document.getElementById("test").addEventListener("click",function(){xhr.get("https://api.wheretheiss.at/v1/satellites/25544",function(e,t){e&&console.log(e);JSON.parse(t.body.replace("/[|]/g",""))})})});
-},{"./views/example.hbs":30,"xhr":27}],2:[function(require,module,exports){
+var xhr=require("xhr"),example=require("./views/example.hbs"),test=require("./views/test.hbs");xhr.get("https://api.wheretheiss.at/v1/satellites",function(e,t){e&&console.log(e),console.log(t.body);var s=JSON.parse(t.body.replace("/[|]/g","")),n=s[0].name;console.log(s[0].id),document.body.innerHTML=example({name:n}),document.getElementById("test").addEventListener("click",function(){xhr.get("https://api.wheretheiss.at/v1/satellites/25544",function(e,t){e&&console.log(e);var s=JSON.parse(t.body.replace("/[|]/g",""));document.getElementById("para").innerHTML=test(s)})})});
+},{"./views/example.hbs":30,"./views/test.hbs":31,"xhr":27}],2:[function(require,module,exports){
 function forEach(r,t,o){if(!isFunction(t))throw new TypeError("iterator must be a function");arguments.length<3&&(o=this),"[object Array]"===toString.call(r)?forEachArray(r,t,o):"string"==typeof r?forEachString(r,t,o):forEachObject(r,t,o)}function forEachArray(r,t,o){for(var n=0,a=r.length;a>n;n++)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}function forEachString(r,t,o){for(var n=0,a=r.length;a>n;n++)t.call(o,r.charAt(n),n,r)}function forEachObject(r,t,o){for(var n in r)hasOwnProperty.call(r,n)&&t.call(o,r[n],n,r)}var isFunction=require("is-function");module.exports=forEach;var toString=Object.prototype.toString,hasOwnProperty=Object.prototype.hasOwnProperty;
 
 },{"is-function":24}],3:[function(require,module,exports){
@@ -90,5 +90,8 @@ function extend(){for(var r={},e=0;e<arguments.length;e++){var t=arguments[e];fo
 
 },{}],30:[function(require,module,exports){
 var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(e,n,l,a,t){var i,r=null!=n?n:{},u=l.helperMissing,o="function",p=e.escapeExpression;return"<h1>Hello "+p((i=null!=(i=l.name||(null!=n?n.name:n))?i:u,typeof i===o?i.call(r,{name:"name",hash:{},data:t}):i))+"!</h1>\n\n<p>"+p((i=null!=(i=l.id||(null!=n?n.id:n))?i:u,typeof i===o?i.call(r,{name:"id",hash:{},data:t}):i))+'</p>\n<button id= "test" type= "button">Click Me</button>'},useData:!0});
+
+},{"hbsfy/runtime":23}],31:[function(require,module,exports){
+var HandlebarsCompiler=require("hbsfy/runtime");module.exports=HandlebarsCompiler.template({compiler:[7,">= 4.0.0"],main:function(e,r,a,i,l){return""},useData:!0});
 
 },{"hbsfy/runtime":23}]},{},[1]);

@@ -1,5 +1,6 @@
 var xhr = require('xhr')
 var example = require('./views/example.hbs')
+var test = require('./views/test.hbs')
 
 xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
   if (err) console.log(err) // do something
@@ -26,6 +27,8 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
           }
             
             var allStat = JSON.parse(data.body.replace('/[|]/g', ''))
+            document.getElementById('para').innerHTML = test(allStat)
+
     });
    
 
