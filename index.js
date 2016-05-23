@@ -10,7 +10,7 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
   // console.log(sat[0])
   // console.log(sat[0].name)
   var name1 = sat1[0].name
-  console.log(sat1[0])
+  console.log(sat1[0].id)
   
 
 
@@ -19,7 +19,8 @@ xhr.get('https://api.wheretheiss.at/v1/satellites', function(err, data) {
   document.body.innerHTML = example({ name: name1 });
 })
 
-xhr.get('https://api.wheretheiss.at/v1/satellites/' + sat1[0].id, function (err, data) {
+
+xhr.get('https://api.wheretheiss.at/v1/satellites/' + 25544, function (err, data) {
   if (err) console.log(err)
 
     var allStat = JSON.parse(data.body.replace('/[|]/g', ''))
